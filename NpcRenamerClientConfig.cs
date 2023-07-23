@@ -11,18 +11,18 @@ class NpcRenamerClientConfig : ModConfig
 {
     public override ConfigScope Mode => ConfigScope.ClientSide;
 
-    [Header("Automatic Settings")]
+    [Header("$Mods.NPCRenamer.Configs.Header")]
     // non-player specific stuff:
     [DefaultValue(typeof(Vector2), "1100, 100")]
     [Range(0f, 1920f)]
-    [Label("NPC Renamer Position")]
-    [Tooltip("Position of the NPC Renamer UI. This will automatically save, no need to adjust")]
+    [LabelKey("$Mods.NPCRenamer.Configs.Position.Label")]
+    [TooltipKey("$Mods.NPCRenamer.Configs.Position.Tooltip")]
     public Vector2 NpcRenamerPosition { get; set; }
     
     [DefaultValue(typeof(Vector2), "400, 300")]
     [Range(200f, 1920f)]
-    [Label("NPC Renamer Size")]
-    [Tooltip("Size of the NPC Renamer UI. This will automatically save, no need to adjust")]
+    [LabelKey("$Mods.NPCRenamer.Configs.Size.Label")]
+    [TooltipKey("$Mods.NPCRenamer.Configs.Size.Tooltip")]
     public Vector2 NpcRenamerSize { get; set; }
 
     internal static void SaveConfig()
