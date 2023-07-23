@@ -54,13 +54,7 @@ public class UiNpcEditor : UIElement
         _nameTextInput.SetContents(_npc.GivenName);
         Append(_nameTextInput);
 
-        var headId = NPCHeadID.HousingQuery;
-        if (_npc != null && TownNPCProfiles.Instance.GetProfile(_npc, out var profile))
-        {
-            headId = profile.GetHeadTextureIndex(_npc);
-        }
-
-        _headImage = new UIImage(Main.Assets.Request<Texture2D>($"Images/NPC_Head_{headId}"));
+        _headImage = GetNpcHeadImage();
         _headImage.Width.Set(34, 0f);
         _headImage.Height.Set(34, 0f);
         _headImage.VAlign = 0.5f;
@@ -88,5 +82,26 @@ public class UiNpcEditor : UIElement
 
         OnNpcNameChange?.Invoke(_npc, _temporaryName);
         _temporaryName = "";
+    }
+
+    private UIImage GetNpcHeadImage()
+    {
+        if (_npc.ModNPC != null)
+        {
+            // This NPC is an ModNPC thus we have access to the asset path directly
+            var headTexturePath = _npc.ModNPC.HeadTexture;
+            // The asset path starts with the name of the mod. This needs to be cut off.
+            var prunedHeadTexturePath = headTexturePath.Substring(headTexturePath.IndexOf('/') + 1);
+            return new UIImage(_npc.ModNPC.Mod.Assets.Request<Texture2D>(prunedHeadTexturePath));
+        }
+
+        // This is an vanilla NPC thus we need to fetch the head texture ID first
+        var headId = NPCHeadID.HousingQuery;
+        if (_npc != null && TownNPCProfiles.Instance.GetProfile(_npc, out var profile))
+        {
+            headId = profile.GetHeadTextureIndex(_npc);
+        }
+
+        return new UIImage(Main.Assets.Request<Texture2D>($"Images/NPC_Head_{headId}"));
     }
 }
