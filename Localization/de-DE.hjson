@@ -16,6 +16,11 @@ Mods: {
 			NpcRenamerClientConfig.DisplayName: NPC Renamer Client Konfiguration
 		}
 
+		UI: {
+			Title: NPC Renamer
+			NoNPCsAlive: Keine lebenden NPCs
+		}
+
 		Keybinds.ToggleNpcRenamer.DisplayName: NPC Renamer umschalten
 	}
 }

@@ -6,6 +6,7 @@ using NPCRenamer.UI;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.UI;
 
@@ -144,7 +145,7 @@ public class NpcRenamerUiSystem : ModSystem
                     _uiNpcEditors.Remove(uiNpcEditor.Key);
                 }
             }
-            
+
             switch (_uiNpcEditors.Count == 0)
             {
                 case false when _emptyTextVisible:
@@ -158,7 +159,7 @@ public class NpcRenamerUiSystem : ModSystem
                     _emptyTextVisible = true;
                     break;
             }
-            
+
             switch (_uiScrollBar.CanScroll)
             {
                 case false when _scrollBarVisible:
@@ -214,7 +215,7 @@ public class NpcRenamerUiSystem : ModSystem
             closeButton.OnLeftMouseDown += CloseButtonOnOnMouseDown;
             _uiPanel.Append(closeButton);
 
-            var titleText = new UIText("NPC Renamer")
+            var titleText = new UIText(Language.GetOrRegister("Mods.NPCRenamer.UI.Title"))
             {
                 VAlign = 0f,
                 HAlign = 0.5f,
@@ -223,7 +224,7 @@ public class NpcRenamerUiSystem : ModSystem
             };
             _uiPanel.Append(titleText);
 
-            _emptyText = new UIText("No NPCs alive")
+            _emptyText = new UIText(Language.GetOrRegister("Mods.NPCRenamer.UI.NoNPCsAlive"))
             {
                 VAlign = 0.5f,
                 HAlign = 0.5f,
