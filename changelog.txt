@@ -1,0 +1,1 @@
+- Renaming window now properly displays heads of Modded NPCs
