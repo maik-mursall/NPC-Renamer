@@ -211,7 +211,7 @@ public class NpcRenamerUiSystem : ModSystem
             closeButton.HAlign = 1f;
             closeButton.MarginTop = -_uiPanel.PaddingTop;
             closeButton.MarginRight = -_uiPanel.PaddingRight;
-            closeButton.OnMouseDown += CloseButtonOnOnMouseDown;
+            closeButton.OnLeftMouseDown += CloseButtonOnOnMouseDown;
             _uiPanel.Append(closeButton);
 
             var titleText = new UIText("NPC Renamer")
