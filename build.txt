@@ -1,4 +1,4 @@
 displayName = NPC Renamer
 author = Maik Mursall
-version = 1.1.0
+version = 1.2.0
 homepage = https://github.com/maik-mursall/NPC-Renamer
