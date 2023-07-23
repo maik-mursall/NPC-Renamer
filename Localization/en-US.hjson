@@ -1,0 +1,26 @@
+Mods: {
+	NPCRenamer: {
+		Configs: {
+			Header: Automatic Settings
+
+			Position: {
+				Label: NPC Renamer Position
+				Tooltip: Position of the NPC Renamer UI. This will automatically save, no need to adjust.
+			}
+
+			Size: {
+				Label: NPC Renamer Size
+				Tooltip: Size of the NPC Renamer UI. This will automatically save, no need to adjust.
+			}
+
+			NpcRenamerClientConfig.DisplayName: NPC Renamer Client Config
+		}
+
+		UI: {
+			Title: NPC Renamer
+			NoNPCsAlive: No NPCs alive
+		}
+
+		Keybinds.ToggleNpcRenamer.DisplayName: Toggle NPC Renamer
+	}
+}

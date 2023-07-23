@@ -50,7 +50,7 @@ public class UiNpcEditor : UIElement
         _nameTextInput.VAlign = 0.5f;
         _nameTextInput.OnEndTakingInput += NameTextInputOnOnEndTakingInput;
         _nameTextInput.OnContentsChanged += NameTextInputOnOnContentsChanged;
-        _nameTextInput.OnClick += OnOnClick;
+        _nameTextInput.OnLeftClick += OnOnClick;
         _nameTextInput.SetContents(_npc.GivenName);
         Append(_nameTextInput);
 
