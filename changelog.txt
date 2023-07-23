@@ -1,1 +1,4 @@
-- Renaming window is now able to display the heads of modded NPCs
+- Migrated to tModLoader 1.4.4
+- Text is now localized in the following languages:
+    - German
+    - English
